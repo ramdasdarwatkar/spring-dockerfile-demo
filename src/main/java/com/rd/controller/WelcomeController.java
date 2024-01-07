@@ -10,7 +10,7 @@ public class WelcomeController {
 	
 	@GetMapping("/docker")
 	public String welcomeToDocker() {
-		return "Welcome to world of containerized Applications...!";
+		return "Welcome to world of containerized Applications :) ..!";
 	}
 
 }
