@@ -40,7 +40,7 @@ jobs:
 
     - uses: actions/upload-artifact@v4
       with:
-       name: app
+       name: spring-dockerfile-demo
        path: target/
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -53,7 +53,7 @@ jobs:
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
-          name: app
+          name: spring-dockerfile-demo
           path: target/ 
           
       - run: cat target/spring-dockerfile-demo-0.0.1-SNAPSHOT.jar
