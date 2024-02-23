@@ -27,18 +27,8 @@ jobs:
       with:
         java-version: 17
         distribution: 'temurin'
-        cache: maven
     - name: Build with Maven
-      run:
-        mvn clean build
-
-    - uses: actions/checkout@v1
-
-    - run: mkdir -p target/
-
-    - run: echo hello > target/spring-dockerfile-demo-0.0.1-SNAPSHOT.jar
-          
-    - run: cat target/spring-dockerfile-demo-0.0.1-SNAPSHOT.jar
+      run: mvn -B package --file pom.xml
       
     - name: Log in to Docker Hub
       uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
